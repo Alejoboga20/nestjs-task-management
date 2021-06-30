@@ -8,7 +8,7 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
-import { Task, TaskStatus } from './task.model';
+import { Task, TaskStatus } from './task-status.enum';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
@@ -17,7 +17,7 @@ import { UpdateTaskStatusDto } from './dto/update-task.-status.dto';
 @Controller('tasks')
 export class TasksController {
   constructor(private tasksService: TasksService) {}
-
+  /* 
   @Get()
   getTasks(@Query() filterDto: GetTasksFilterDto): Task[] {
     if (Object.keys(filterDto).length) {
@@ -49,5 +49,5 @@ export class TasksController {
   @Delete('/:id')
   deleteTask(@Param('id') id: string): void {
     return this.tasksService.deleteTask(id);
-  }
+  } */
 }
