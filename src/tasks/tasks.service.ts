@@ -58,21 +58,6 @@ export class TasksService {
     return tasks;
   }
 
-  createTask(createTaskDto: CreateTaskDto): Task {
-    const { title, description } = createTaskDto;
-
-    const task: Task = {
-      id: uuid(),
-      title,
-      description,
-      status: TaskStatus.OPEN,
-    };
-
-    this.tasks.push(task);
-
-    return task;
-  }
-
   updateTaskStatus(id: string, status: TaskStatus): Task {
     const task: Task = this.getTaskById(id);
     task.status = status;
